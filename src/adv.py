@@ -38,6 +38,8 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+from player import Player
+player_1 = Player('Bob', room['outside'])
 
 # Write a loop that:
 #
@@ -49,3 +51,24 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+choices = ['n', 's', 'e', 'w']
+while True: # LOOP
+
+# READ
+    print(player_1)
+    cmd = input('->')
+
+    # REPL should accept 'n', 's', 'e', 'w', 'q' commands
+    # 'q' to quit
+    # EVALUATE
+    if cmd in choices:
+        # do something
+        player_1.player_move(cmd)
+        # print(player_1.current_room)
+    elif cmd == 'q':
+        # Break out of the loop
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid command.")
+
