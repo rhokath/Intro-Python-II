@@ -4,6 +4,9 @@ class Player:
     def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
+        self.items = []
+    def add_item(self, item):
+        self.items.append(item)
     def player_move(self, direction):
         str = f"{direction}_to"
         new_room = getattr(self.current_room, str)
